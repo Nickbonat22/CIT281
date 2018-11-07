@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Example:
+Components can be containers (i.e. can have children)
+Examples so far have been empty elements:
+
+<HelloWorld/>
+<HelloWorld greetTarget="Batman"/>
+
+Next:
+
+<Buttonify>SEND DATA</Buttonify>
+
+Exercise: make the returned button element clickable, by adding a .js file.
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>comp demo 5</title>
+
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <style>
+    #container {
+      padding: 50px;
+      background-color: #EEE;
+    }
+
+    #container button {
+      font-size: 32px;
+      font-family: sans-serif;
+      color: #0080A8;
+      border-radius: 15px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+  <script type="text/babel">
+var destination = document.querySelector("#container");
+
+class Buttonify extends React.Component {
+  render() {
+    return(
+      <div>
+        <button type={this.props.behavior}>{this.props.children}</button>
+      </div>
+    );
+  }
+}
+
+ ReactDOM.render( //pass the property value to the component
+<div>
+  <Buttonify behavior="submit">SEND DATA</Buttonify>
+</div>,
+destination
+);
+</script>
+
+</body>
+
+</html>

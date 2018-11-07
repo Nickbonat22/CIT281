@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Example:
+//declare a component
+//create several instances of a component, and add to DOM
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>comp demo 3</title>
+
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <style>
+    #container {
+      padding: 50px;
+      background-color: #EEE;
+    }
+
+    #container h1 {
+      font-size: 64px;
+      font-family: sans-serif;
+      color: #0080A8;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+  <script type="text/babel">
+var destination = document.querySelector("#container");
+
+class HelloWorld extends React.Component {
+  render() {
+    return <h1>Hello, Component World!</h1>;
+  }
+}
+
+
+  ReactDOM.render(
+    //add several components
+    <div>
+      <HelloWorld/>
+      <HelloWorld/>
+      <HelloWorld/>
+    </div>,
+    destination);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Example:
+
+Internal component state
+
+Exercise: Declare two variables for first and last name,
+and greet the user.
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>comp demo 6</title>
+
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <style>
+    #container {
+      padding: 50px;
+      background-color: #EEE;
+    }
+
+    #container h1 {
+      font-size: 64px;
+      font-family: sans-serif;
+      color: #0080A8;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+  <script type="text/babel">
+var destination = document.querySelector("#container");
+
+class HelloWorld extends React.Component {
+  render() {
+    const helloWorld = 'Welcome to React';
+    return (
+      <div className="App">
+        <h2>{helloWorld}</h2>
+      </div>
+    );
+  }
+}
+
+  ReactDOM.render(
+    <div>
+      <HelloWorld/>
+      <HelloWorld/>
+    </div>,
+    destination);
+</script>
+
+</body>
+
+</html>

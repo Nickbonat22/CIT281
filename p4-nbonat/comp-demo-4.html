@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Example:
+//specifying properties of a component
+1. update the component to use the property value
+2. pass a value in the call
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>comp demo 4</title>
+
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <style>
+    #container {
+      padding: 50px;
+      background-color: #EEE;
+    }
+
+    #container h1 {
+      font-size: 64px;
+      font-family: sans-serif;
+      color: #0080A8;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+  <script type="text/babel">
+var destination = document.querySelector("#container");
+
+class HelloWorld extends React.Component {
+  render() {
+    //1. use the property value in the element
+    return (<h1>Hello, {this.props.greetTarget}!</h1>);
+  }
+}
+
+  ReactDOM.render(
+    //pass the property value to the component
+    <div>
+    <HelloWorld greetTarget="Batman"/>
+     <HelloWorld greetTarget="Cat Woman"/>
+    </div>,
+    destination);
+</script>
+
+</body>
+
+</html>
